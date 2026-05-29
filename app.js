@@ -10,7 +10,7 @@ const state = {
   locked: false
 };
 
-const GUARANTEED_TARGET_WINDOW = 10;
+const GUARANTEED_TARGET_WINDOW = 5;
 
 const els = {
   eventCard: document.querySelector("#eventCard"),
@@ -129,7 +129,7 @@ function startRound(preferredEventId) {
 
   renderRound();
   clearFeedbackClasses();
-  setStatus("Doğru tanım en geç 10 aday içinde gelir. Eşleştiğini düşünüyorsan kontrol et.");
+  setStatus("Doğru tanım en geç 5 aday içinde gelir. Eşleştiğini düşünüyorsan kontrol et.");
 }
 
 function renderRound() {
@@ -156,7 +156,7 @@ function showRandomEvent() {
   clearFeedbackClasses();
   pulse(els.eventCard);
   pulse(els.definitionCard);
-  setStatus("Yeni olay geldi. Doğru tanım en geç 10 aday içinde.");
+  setStatus("Yeni olay geldi. Doğru tanım en geç 5 aday içinde.");
 }
 
 function showRandomDefinition() {
@@ -221,7 +221,7 @@ function handleWrongMatch(eventItem, definitionItem) {
     renderRound();
     clearFeedbackClasses();
     pulse(els.definitionCard);
-    setStatus("Aynı olay için yeni aday geldi. Doğru tanım en geç 10 aday içinde.");
+    setStatus("Aynı olay için yeni aday geldi. Doğru tanım en geç 5 aday içinde.");
   }, 900);
 }
 
