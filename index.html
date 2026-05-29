@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Siyasi Dağılma Eşleştirme Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Kolay seviye</p>
+          <h1>Siyasi Dağılma Eşleştirme Oyunu</h1>
+        </div>
+        <button class="ghost-button" id="restartTop" type="button">Tekrar Oyna</button>
+      </header>
+
+      <section class="score-panel" aria-label="Skor">
+        <div class="score-card">
+          <span>Doğru</span>
+          <strong id="correctScore">0</strong>
+        </div>
+        <div class="score-card">
+          <span>Yanlış</span>
+          <strong id="wrongScore">0</strong>
+        </div>
+        <div class="score-card">
+          <span>Başarı</span>
+          <strong id="percentScore">%0</strong>
+        </div>
+        <div class="score-card">
+          <span>Kalan</span>
+          <strong id="remainingScore">0</strong>
+        </div>
+      </section>
+
+      <section class="status-strip" id="statusStrip" aria-live="polite">
+        <span id="statusText">Veriler yükleniyor...</span>
+      </section>
+
+      <section class="match-stage" aria-label="Eşleştirme alanı">
+        <article class="focus-card event-focus" id="eventCard">
+          <span class="focus-label">Olay</span>
+          <strong class="event-year" id="eventYear">----</strong>
+          <h2 id="eventName">Yükleniyor</h2>
+        </article>
+
+        <button class="focus-card definition-focus" id="definitionCard" type="button">
+          <span class="focus-label">Aday tanım</span>
+          <p id="definitionText">Veriler hazırlanıyor...</p>
+        </button>
+      </section>
+
+      <section class="action-row" aria-label="Oyun kontrolleri">
+        <button class="secondary-button" id="newEvent" type="button">Başka Olay</button>
+        <button class="secondary-button" id="newDefinition" type="button">Başka Tanım</button>
+        <button class="primary-button" id="matchButton" type="button">Eşleştir</button>
+      </section>
+    </main>
+
+    <section class="result-screen hidden" id="resultScreen" aria-live="polite">
+      <div class="result-box" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <p class="eyebrow">Oyun bitti</p>
+        <h2 id="resultTitle">Sonuç</h2>
+        <div class="result-stats">
+          <div>
+            <span>Doğru</span>
+            <strong id="resultCorrect">0</strong>
+          </div>
+          <div>
+            <span>Yanlış</span>
+            <strong id="resultWrong">0</strong>
+          </div>
+          <div>
+            <span>Başarı</span>
+            <strong id="resultPercent">%0</strong>
+          </div>
+        </div>
+        <div class="mistake-area">
+          <h3>Yanlış eşleştirilenler</h3>
+          <div id="mistakesList" class="mistakes-list"></div>
+        </div>
+        <button class="primary-button" id="playAgain" type="button">Tekrar Oyna</button>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
